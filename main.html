@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style type="text/css"> 
-			body {margin: 30px;} 
-		</style>  
-		<meta charset=utf-8 /> 
-		<title>Remove items from a dropdown list</title>
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="classwork.css">
+</head>
+<body>
 
-	<body>
-		<form> 
-			<select id="colorSelect"> 
-				<option>Red</option> 
-				<option>Green</option> 
-				<option>White</option> 
-				<option>Black</option> 
-			</select> 
-			<input type="button" value="Select and Remove"> 
-		</form>
+    <h1 id="size"></h1>
+    
+    <select name="" id="dropdown">
+    <option id="green" value="green">Green</option>
+    <option id="red" value="red">Red</option>
+    <option id="white" value="white">White</option>
+    <option id="blue" value="blue">Blue</option>
 
-		<script type="text/javascript" src="./script.js">
-		</script>
+    </select>
 
-	</body>
+    <script>
 
-</html>
+        const dropDown = document.getElementById("dropdown")
+        dropDown.addEventListener("click", removeOption)
+
+        function removeOption(e){
+
+            console.log(e.target, e.target.value)
+
+            const selectedOption = document.getElementById(e.target.value)
+            selectedOption.remove()
+
+            // e.target.removeChild(selectedOption)
+        }
